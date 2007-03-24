@@ -1,0 +1,55 @@
+diff -ru ragel-5.19-orig/ragel/Makefile.in ragel-5.19/ragel/Makefile.in
+--- ragel-5.19-orig/ragel/Makefile.in	2007-03-10 16:21:36.000000000 -0700
++++ ragel-5.19/ragel/Makefile.in	2007-03-20 23:44:00.000000000 -0600
+@@ -81,6 +81,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s ragel $(prefix)/bin/ragel
++	install ragel $(prefix)/bin/ragel
+ 
+ -include $(DEPS)
+diff -ru ragel-5.19-orig/rlgen-cd/Makefile.in ragel-5.19/rlgen-cd/Makefile.in
+--- ragel-5.19-orig/rlgen-cd/Makefile.in	2007-03-02 12:39:42.000000000 -0700
++++ ragel-5.19/rlgen-cd/Makefile.in	2007-03-20 23:44:51.000000000 -0600
+@@ -65,6 +65,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s rlgen-cd $(prefix)/bin/rlgen-cd
++	install rlgen-cd $(prefix)/bin/rlgen-cd
+ 
+ -include $(DEPS)
+diff -ru ragel-5.19-orig/rlgen-dot/Makefile.in ragel-5.19/rlgen-dot/Makefile.in
+--- ragel-5.19-orig/rlgen-dot/Makefile.in	2007-03-02 12:39:42.000000000 -0700
++++ ragel-5.19/rlgen-dot/Makefile.in	2007-03-20 23:44:14.000000000 -0600
+@@ -60,6 +60,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s rlgen-dot $(prefix)/bin/rlgen-dot
++	install rlgen-dot $(prefix)/bin/rlgen-dot
+ 
+ -include $(DEPS)
+diff -ru ragel-5.19-orig/rlgen-java/Makefile.in ragel-5.19/rlgen-java/Makefile.in
+--- ragel-5.19-orig/rlgen-java/Makefile.in	2007-03-02 12:39:42.000000000 -0700
++++ ragel-5.19/rlgen-java/Makefile.in	2007-03-20 23:45:00.000000000 -0600
+@@ -61,6 +61,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s rlgen-java $(prefix)/bin/rlgen-java
++	install rlgen-java $(prefix)/bin/rlgen-java
+ 
+ -include $(DEPS)
+diff -ru ragel-5.19-orig/rlgen-ruby/Makefile.in ragel-5.19/rlgen-ruby/Makefile.in
+--- ragel-5.19-orig/rlgen-ruby/Makefile.in	2007-03-02 12:39:42.000000000 -0700
++++ ragel-5.19/rlgen-ruby/Makefile.in	2007-03-20 23:44:31.000000000 -0600
+@@ -61,6 +61,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s rlgen-ruby $(prefix)/bin/rlgen-ruby
++	install rlgen-ruby $(prefix)/bin/rlgen-ruby
+ 
+ -include $(DEPS)
