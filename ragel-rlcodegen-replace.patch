@@ -1,53 +1,26 @@
-Index: README
-===================================================================
---- README	(revision 149)
-+++ README	(working copy)
-@@ -33,7 +33,7 @@
- 
- To build all the documentation cd to 'doc' and type 'make'. If you don't have
- all of the programs to build the user guide and just want the man page use
--'make ragel.1 rlcodegen.1'.
-+'make man'.
- 
- 
- 3. Installing
-Index: doc/ragel.1.in
-===================================================================
---- doc/ragel.1.in	(revision 149)
-+++ doc/ragel.1.in	(working copy)
-@@ -31,15 +31,15 @@
+diff -rdu ragel-5.22.orig/doc/ragel.1.in ragel-5.22/doc/ragel.1.in
+--- ragel-5.22.orig/doc/ragel.1.in	2007-06-14 08:10:18.000000000 -0600
++++ ragel-5.22/doc/ragel.1.in	2007-06-18 20:53:54.000000000 -0600
+@@ -31,7 +31,8 @@
  .SH DESCRIPTION
  .B Note:
  this is the frontend component of Ragel, which generates an intermediate
 -file format that must be processed by rlcodegen(1).
 +file format that must be processed by one of: rlgen-cd(1), rlgen-dot(1),
-+rlgen-java(1) or rlgen-ruby(1).
++rlgen-java(1).
  
--Ragel compiles finite state machines from regular languages into executable
--code.  Ragel can generate C, C++, Objective-C, D, or Java code. Ragel state
--machines can not only recognize byte
--sequences as regular expression machines do, but can also execute code at
--arbitrary points in the recognition of a regular language.  User code is
--embedded using inline operators that do not disrupt the regular language
--syntax.
-+Ragel compiles finite state machines from regular languages into
-+executable code.  Ragel can generate C, C++, Objective-C, D, Java or
-+Ruby code. Ragel state machines can not only recognize byte sequences as
-+regular expression machines do, but can also execute code at arbitrary
-+points in the recognition of a regular language.  User code is embedded
-+using inline operators that do not disrupt the regular language syntax.
+ Ragel compiles finite state machines from regular languages into executable
+ code.  Ragel can generate C, C++, Objective-C, D, or Java code. Ragel state
+diff -rdu ragel-5.22.orig/README ragel-5.22/README
+--- ragel-5.22.orig/README	2007-04-06 12:25:12.000000000 -0600
++++ ragel-5.22/README	2007-06-18 20:50:53.000000000 -0600
+@@ -33,7 +33,7 @@
  
- The core language consists of standard regular expression operators, such as
- union, concatenation and kleene star, accompanied by action embedding
-@@ -554,7 +554,10 @@
- Ragel was written by Adrian Thurston <thurston@cs.queensu.ca>.  Objective-C
- output contributed by Erich Ocean. D output contributed by Alan West. 
- .SH "SEE ALSO"
--.BR rlcodegen (1),
-+.BR rlgen-cd(1),
-+.BR rlgen-dot(1),
-+.BR rlgen-java(1),
-+.BR rlgen-ruby(1),
- .BR re2c (1),
- .BR flex (1)
+ To build all the documentation cd to 'doc' and type 'make'. If you don't have
+ all of the programs to build the user guide and just want the man page use
+-'make ragel.1 rlcodegen.1'.
++'make ragel.1 rlgen-cd.1 rlgen-java.1 rlgen-ruby.1 rlgen-dot.1'
  
+ 
+ 3. Installing
+Only in ragel-5.22.orig/redfsm: redfsm.a
