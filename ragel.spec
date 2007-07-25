@@ -1,5 +1,5 @@
 Name:           ragel   
-Version:        5.22
+Version:        5.23
 Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
@@ -13,7 +13,6 @@ BuildRequires:  transfig, tetex-latex
 Requires:       gawk
 
 Patch0:         ragel-Makefile-install.patch
-Patch1:         ragel-rlcodegen-replace.patch
 
 %description
 Ragel compiles finite state machines from regular languages into executable C,
@@ -26,7 +25,6 @@ done using inline operators that do not disrupt the regular language syntax.
 %setup -q
 
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure 
@@ -61,6 +59,10 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Jul 24 2007 Jeremy Hinegardner <jeremy@hinegardner.org> - 5.23-1
+- update to 5.23
+- removed ragel-rlcodegen-replace.patch - it was applied upstream
+
 * Mon Jun 18 2007 Jeremy Hinegardner <jeremy@hinegardner.org> - 5.22-1
 - update to 5.22
 - remove ragel-Makefile-in.patch - it was applied upstream
