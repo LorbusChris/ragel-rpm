@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        5.23
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -59,6 +59,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Wed Aug 29 2007 Fedora Release Engineering <rel-eng at fedoraproject dot org> - 5.23-2
+- Rebuild for selinux ppc32 issue.
+
 * Tue Jul 24 2007 Jeremy Hinegardner <jeremy@hinegardner.org> - 5.23-1
 - update to 5.23
 - removed ragel-rlcodegen-replace.patch - it was applied upstream
