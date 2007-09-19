@@ -1,10 +1,10 @@
 Name:           ragel   
-Version:        5.23
-Release:        2%{?dist}
+Version:        5.24
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
-License:        GPL 
+License:        GPLv2+
 URL:            http://www.cs.queensu.ca/~thurston/ragel/ 
 Source0:        http://www.cs.queensu.ca/~thurston/ragel/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -59,6 +59,10 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 18 2007 Jeremy Hinegardner <jeremy@hinegardner.org> - 5.24-1
+- update to 5.24
+- update License tag
+
 * Wed Aug 29 2007 Fedora Release Engineering <rel-eng at fedoraproject dot org> - 5.23-2
 - Rebuild for selinux ppc32 issue.
 
