@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        5.25
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
