@@ -1,5 +1,5 @@
 Name:           ragel   
-Version:        5.25
+Version:        6.0
 Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
@@ -59,6 +59,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Sat Jan 19 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.0-1
+- update to 6.0
+
 * Sun Jan 06 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 5.25-1
 - update to 5.25
 
