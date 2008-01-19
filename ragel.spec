@@ -1,12 +1,12 @@
 Name:           ragel   
-Version:        5.25
-Release:        2%{?dist}
+Version:        6.0
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
 License:        GPLv2+
 URL:            http://www.cs.queensu.ca/~thurston/ragel/ 
-Source0:        http://www.cs.queensu.ca/~thurston/ragel/%{name}-%{version}.tar.gz
+Source:         http://www.cs.queensu.ca/~thurston/ragel/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  transfig, tetex-latex
@@ -59,8 +59,8 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
-* Sun Jan 06 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 5.25-2
-- bump release
+* Sat Jan 19 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.0-1
+- update to 6.0
 
 * Sun Jan 06 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 5.25-1
 - update to 5.25
