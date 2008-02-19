@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -59,6 +59,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Feb 19 2008 Fedora Release Engineering <rel-eng@fedoraproject.org> - 6.0-2
+- Autorebuild for GCC 4.3
+
 * Sat Jan 19 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.0-1
 - update to 6.0
 
