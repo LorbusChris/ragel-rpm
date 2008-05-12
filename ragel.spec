@@ -1,5 +1,5 @@
 Name:           ragel   
-Version:        6.1
+Version:        6.2
 Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
@@ -55,10 +55,14 @@ rm -rf %{buildroot}
 %{_bindir}/rlgen-java
 %{_bindir}/rlgen-dot
 %{_bindir}/rlgen-cd
+%{_bindir}/rlgen-csharp
 %{_bindir}/ragel
 %{_mandir}/*/*
 
 %changelog
+* Mon May 12 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.2-1
+- update to 6.2
+
 * Mon Apr 14 2008 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.1-1
 - update to 6.1
 
