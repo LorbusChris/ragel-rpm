@@ -1,7 +1,7 @@
-diff -ru ragel-5.19-orig/ragel/Makefile.in ragel-5.19/ragel/Makefile.in
---- ragel-5.19-orig/ragel/Makefile.in	2007-03-10 16:21:36.000000000 -0700
-+++ ragel-5.19/ragel/Makefile.in	2007-03-20 23:44:00.000000000 -0600
-@@ -81,6 +81,6 @@
+diff -Nuar ragel-6.2.orig/ragel/Makefile.in ragel-6.2/ragel/Makefile.in
+--- ragel-6.2.orig/ragel/Makefile.in	2008-01-11 16:14:17.000000000 -0700
++++ ragel-6.2/ragel/Makefile.in	2008-05-12 00:43:07.000000000 -0600
+@@ -89,6 +89,6 @@
  
  install: all
  	install -d $(prefix)/bin
@@ -9,10 +9,10 @@ diff -ru ragel-5.19-orig/ragel/Makefile.in ragel-5.19/ragel/Makefile.in
 +	install ragel $(prefix)/bin/ragel
  
  -include $(DEPS)
-diff -ru ragel-5.19-orig/rlgen-cd/Makefile.in ragel-5.19/rlgen-cd/Makefile.in
---- ragel-5.19-orig/rlgen-cd/Makefile.in	2007-03-02 12:39:42.000000000 -0700
-+++ ragel-5.19/rlgen-cd/Makefile.in	2007-03-20 23:44:51.000000000 -0600
-@@ -65,6 +65,6 @@
+diff -Nuar ragel-6.2.orig/rlgen-cd/Makefile.in ragel-6.2/rlgen-cd/Makefile.in
+--- ragel-6.2.orig/rlgen-cd/Makefile.in	2007-10-24 09:15:38.000000000 -0600
++++ ragel-6.2/rlgen-cd/Makefile.in	2008-05-12 00:43:07.000000000 -0600
+@@ -64,6 +64,6 @@
  
  install: all
  	install -d $(prefix)/bin
@@ -20,9 +20,20 @@ diff -ru ragel-5.19-orig/rlgen-cd/Makefile.in ragel-5.19/rlgen-cd/Makefile.in
 +	install rlgen-cd $(prefix)/bin/rlgen-cd
  
  -include $(DEPS)
-diff -ru ragel-5.19-orig/rlgen-dot/Makefile.in ragel-5.19/rlgen-dot/Makefile.in
---- ragel-5.19-orig/rlgen-dot/Makefile.in	2007-03-02 12:39:42.000000000 -0700
-+++ ragel-5.19/rlgen-dot/Makefile.in	2007-03-20 23:44:14.000000000 -0600
+diff -Nuar ragel-6.2.orig/rlgen-csharp/Makefile.in ragel-6.2/rlgen-csharp/Makefile.in
+--- ragel-6.2.orig/rlgen-csharp/Makefile.in	2008-03-30 14:04:15.000000000 -0600
++++ ragel-6.2/rlgen-csharp/Makefile.in	2008-05-12 00:42:49.000000000 -0600
+@@ -64,6 +64,6 @@
+ 
+ install: all
+ 	install -d $(prefix)/bin
+-	install -s rlgen-csharp $(prefix)/bin/rlgen-csharp
++	install rlgen-csharp $(prefix)/bin/rlgen-csharp
+ 
+ -include $(DEPS)
+diff -Nuar ragel-6.2.orig/rlgen-dot/Makefile.in ragel-6.2/rlgen-dot/Makefile.in
+--- ragel-6.2.orig/rlgen-dot/Makefile.in	2007-10-24 09:15:38.000000000 -0600
++++ ragel-6.2/rlgen-dot/Makefile.in	2008-05-12 00:43:07.000000000 -0600
 @@ -60,6 +60,6 @@
  
  install: all
@@ -31,9 +42,9 @@ diff -ru ragel-5.19-orig/rlgen-dot/Makefile.in ragel-5.19/rlgen-dot/Makefile.in
 +	install rlgen-dot $(prefix)/bin/rlgen-dot
  
  -include $(DEPS)
-diff -ru ragel-5.19-orig/rlgen-java/Makefile.in ragel-5.19/rlgen-java/Makefile.in
---- ragel-5.19-orig/rlgen-java/Makefile.in	2007-03-02 12:39:42.000000000 -0700
-+++ ragel-5.19/rlgen-java/Makefile.in	2007-03-20 23:45:00.000000000 -0600
+diff -Nuar ragel-6.2.orig/rlgen-java/Makefile.in ragel-6.2/rlgen-java/Makefile.in
+--- ragel-6.2.orig/rlgen-java/Makefile.in	2007-10-24 09:15:38.000000000 -0600
++++ ragel-6.2/rlgen-java/Makefile.in	2008-05-12 00:43:07.000000000 -0600
 @@ -61,6 +61,6 @@
  
  install: all
@@ -42,10 +53,10 @@ diff -ru ragel-5.19-orig/rlgen-java/Makefile.in ragel-5.19/rlgen-java/Makefile.i
 +	install rlgen-java $(prefix)/bin/rlgen-java
  
  -include $(DEPS)
-diff -ru ragel-5.19-orig/rlgen-ruby/Makefile.in ragel-5.19/rlgen-ruby/Makefile.in
---- ragel-5.19-orig/rlgen-ruby/Makefile.in	2007-03-02 12:39:42.000000000 -0700
-+++ ragel-5.19/rlgen-ruby/Makefile.in	2007-03-20 23:44:31.000000000 -0600
-@@ -61,6 +61,6 @@
+diff -Nuar ragel-6.2.orig/rlgen-ruby/Makefile.in ragel-6.2/rlgen-ruby/Makefile.in
+--- ragel-6.2.orig/rlgen-ruby/Makefile.in	2007-10-24 09:15:38.000000000 -0600
++++ ragel-6.2/rlgen-ruby/Makefile.in	2008-05-12 00:43:07.000000000 -0600
+@@ -62,6 +62,6 @@
  
  install: all
  	install -d $(prefix)/bin
