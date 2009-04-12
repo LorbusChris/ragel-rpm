@@ -1,15 +1,16 @@
 Name:           ragel   
-Version:        6.3
-Release:        2%{?dist}
+Version:        6.4
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
 License:        GPLv2+
-URL:            http://www.cs.queensu.ca/~thurston/ragel/ 
-Source0:        http://www.cs.queensu.ca/~thurston/ragel/%{name}-%{version}.tar.gz
+URL:            http://www.complang.org/%{name}/
+Source0:        http://www.complang.org/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  transfig, tetex-latex
+# for documentation building
+BuildRequires:  transfig, tetex-latex, gcc-objc
 Requires:       gawk
 
 Patch0:         ragel-Makefile-install.patch
@@ -24,10 +25,12 @@ done using inline operators that do not disrupt the regular language syntax.
 %prep
 %setup -q
 
-%patch0 -p1
+%patch0 -p0
 
 %build
-%configure 
+# set the names of the other programming commandline programs
+%configure RUBY=ruby JAVAC=javac GMCS=gmcs 
+
 make %{?_smp_mflags}
 pushd doc
 make %{?_smp_mflags}
@@ -51,15 +54,13 @@ rm -rf %{buildroot}
 %doc COPYING ragel.vim
 %doc examples
 %doc doc/ragel-guide.pdf
-%{_bindir}/rlgen-ruby
-%{_bindir}/rlgen-java
-%{_bindir}/rlgen-dot
-%{_bindir}/rlgen-cd
-%{_bindir}/rlgen-csharp
 %{_bindir}/ragel
 %{_mandir}/*/*
 
 %changelog
+* Sat Apr 11 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> 6.4-1
+-  Update to 6.4
+
 * Wed Feb 25 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
 
