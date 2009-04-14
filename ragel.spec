@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -14,7 +14,6 @@ BuildRequires:  transfig, tetex-latex, gcc-objc
 Requires:       gawk
 
 Patch0:         ragel-Makefile-install.patch
-Patch1:         ragel-main.patch
 
 %description
 Ragel compiles finite state machines from regular languages into executable C,
@@ -27,7 +26,6 @@ done using inline operators that do not disrupt the regular language syntax.
 %setup -q
 
 %patch0 -p0
-%patch1 -p0
 
 %build
 # set the names of the other programming commandline programs
@@ -60,6 +58,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Apr 14 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> 6.4-3
+-  remove main.cpp patch for testing
+
 * Sat Apr 11 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> 6.4-2
 -  add patch for main.cpp
 
