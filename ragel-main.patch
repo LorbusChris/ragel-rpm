@@ -1,0 +1,21 @@
+diff -up ./ragel/main.cpp.fedora ./ragel/main.cpp
+--- ragel/main.cpp.fedora	2009-04-11 19:19:03.000000000 -0600
++++ ragel/main.cpp	2009-04-11 19:18:34.000000000 -0600
+@@ -336,7 +336,7 @@ void processArgs( int argc, const char *
+ 				printStatistics = true;
+ 				break;
+ 			case '-': {
+-				char *eq = strchr( pc.paramArg, '=' );
++				char *eq = strchr( (char *)pc.paramArg, '=' );
+ 
+ 				if ( eq != 0 )
+ 					*eq++ = 0;
+@@ -507,7 +507,7 @@ char *makeIntermedTemplate( const char *
+ {
+ 	char *result = 0;
+ 	const char *templ = "ragel-XXXXXX.xml";
+-	char *lastSlash = strrchr( baseFileName, '/' );
++	char *lastSlash = strrchr( (char *)baseFileName, '/' );
+ 	if ( lastSlash == 0 ) {
+ 		result = new char[strlen(templ)+1];
+ 		strcpy( result, templ );

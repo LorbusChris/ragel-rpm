@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -50,6 +50,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5-2
+- add missing ragel-main patch
+
 * Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5.1
 - Update to 6.5
 
