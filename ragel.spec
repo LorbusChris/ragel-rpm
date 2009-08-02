@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -13,7 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  transfig, tetex-latex, gcc-objc
 Requires:       gawk
 
-Patch0:         ragel-Makefile-install.patch
+Patch0:         ragel-main.patch
 
 %description
 Ragel compiles finite state machines from regular languages into executable C,
@@ -29,21 +29,14 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %build
 # set the names of the other programming commandline programs
-%configure RUBY=ruby JAVAC=javac GMCS=gmcs 
+%configure --docdir=%{_docdir}/%{name}-%{version} RUBY=ruby JAVAC=javac GMCS=gmcs 
 
 make %{?_smp_mflags}
-pushd doc
-make %{?_smp_mflags}
-popd
 
 
 %install
 rm -rf %{buildroot}
-make prefix=%{buildroot}%{_prefix} install
-chmod a-x examples/*
-pushd doc
-make prefix=%{buildroot}%{_prefix} mandir=%{buildroot}%{_mandir} docdir=%{buildroot}%{_docdir}/%{name}-%{version} install
-popd
+make install DESTDIR=%{buildroot}
 
 %clean
 rm -rf %{buildroot}
@@ -52,12 +45,14 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc COPYING ragel.vim
-%doc examples
 %doc doc/ragel-guide.pdf
 %{_bindir}/ragel
 %{_mandir}/*/*
 
 %changelog
+* Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5.2
+- fix build process 
+
 * Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5.1
 - Update to 6.5
 
