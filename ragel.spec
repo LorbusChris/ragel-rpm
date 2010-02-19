@@ -1,6 +1,6 @@
 Name:           ragel   
-Version:        6.5
-Release:        2%{?dist}
+Version:        6.6
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -13,8 +13,6 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  transfig, tetex-latex, gcc-objc
 Requires:       gawk
 
-Patch0:         ragel-main.patch
-
 %description
 Ragel compiles finite state machines from regular languages into executable C,
 C++, Objective-C, or D code. Ragel state machines can not only recognize byte
@@ -24,8 +22,6 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %prep
 %setup -q
-
-%patch0 -p0
 
 %build
 # set the names of the other programming commandline programs
@@ -50,7 +46,11 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
-* Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5.2
+* Thu Feb 18 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.6-1 
+- Update to 6.6
+- remove patch
+
+* Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5-2
 - fix build process 
 
 * Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5.1
