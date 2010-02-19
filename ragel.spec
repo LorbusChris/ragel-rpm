@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Thu Feb 18 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.6-2
+- rebuilt
+
 * Thu Feb 18 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.6-1 
 - Update to 6.6
 - remove patch
