@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Tue Aug 24 2010 Adam Tkac <atkac redhat com> - 6.6-2
+- rebuild to ensure F14 has higher NVR than F13
+
 * Thu Feb 18 2010 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.6-0
 - update to 6.6
 - remove patch, fix applied upstream
