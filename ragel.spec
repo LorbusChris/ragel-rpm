@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Tue Aug 24 2010 Adam Tkac <atkac redhat com> - 6.6-2
 - rebuild to ensure F14 has higher NVR than F13
 
