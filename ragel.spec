@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
