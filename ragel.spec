@@ -1,12 +1,13 @@
 Name:           ragel   
 Version:        6.6
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
 License:        GPLv2+
 URL:            http://www.complang.org/%{name}/
 Source0:        http://www.complang.org/%{name}/%{name}-%{version}.tar.gz
+Patch0:		ragel-6.6-gcc47-lookup.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # for documentation building
@@ -22,6 +23,16 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %prep
 %setup -q
+%patch0 -p1 -b .gcc47
+
+# Pass fedora cflags correctly
+sed -i.flags \
+	-e '\@^CXXFLAGS=@d' \
+	configure{.in,}
+touch timestamp
+touch -r timestamp \
+	aclocal.m4 configure.in configure config.h.in \
+	Makefile.in */Makefile.in
 
 %build
 # set the names of the other programming commandline programs
@@ -46,6 +57,10 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Wed Aug  1 2012 Mamoru Tasaka <mtasaka@fedoraproject.org> - 6.6-6
+- Fix build with gcc47
+- Pass fedora cflags correctly
+
 * Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
