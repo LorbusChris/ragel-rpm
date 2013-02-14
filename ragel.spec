@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.6
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -57,6 +57,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Wed Aug  1 2012 Mamoru Tasaka <mtasaka@fedoraproject.org> - 6.6-6
 - Fix build with gcc47
 - Pass fedora cflags correctly
