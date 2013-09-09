@@ -1,17 +1,16 @@
 Name:           ragel   
-Version:        6.6
-Release:        8%{?dist}
+Version:        6.8
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
 License:        GPLv2+
 URL:            http://www.complang.org/%{name}/
 Source0:        http://www.complang.org/%{name}/%{name}-%{version}.tar.gz
-Patch0:		ragel-6.6-gcc47-lookup.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # for documentation building
-BuildRequires:  transfig, tetex-latex, gcc-objc
+BuildRequires:  gcc-objc, autoconf, gcc-c++
 Requires:       gawk
 
 %description
@@ -23,20 +22,19 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %prep
 %setup -q
-%patch0 -p1 -b .gcc47
 
 # Pass fedora cflags correctly
 sed -i.flags \
-	-e '\@^CXXFLAGS=@d' \
-	configure{.in,}
+    -e '\@^CXXFLAGS=@d' \
+    configure{.in,}
 touch timestamp
 touch -r timestamp \
-	aclocal.m4 configure.in configure config.h.in \
-	Makefile.in */Makefile.in
+    aclocal.m4 configure.in configure config.h.in \
+    Makefile.in */Makefile.in
 
 %build
 # set the names of the other programming commandline programs
-%configure --docdir=%{_docdir}/%{name}-%{version} RUBY=ruby JAVAC=javac GMCS=gmcs 
+%configure --docdir=%{_docdir}/%{name} RUBY=ruby JAVAC=javac GMCS=gmcs 
 
 make %{?_smp_mflags}
 
@@ -51,12 +49,15 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING ragel.vim
+%doc COPYING ragel.vim CREDITS ChangeLog
 %doc doc/ragel-guide.pdf
 %{_bindir}/ragel
 %{_mandir}/*/*
 
 %changelog
+* Sun Sep 08 2013 Jeremy Hinegardner <jeremy@hinegardner.org> - 6.8-1
+- Update to upstream 6.8
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.6-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
