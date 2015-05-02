@@ -1,6 +1,6 @@
 Name:           ragel   
 Version:        6.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Finite state machine compiler
 
 Group:          Development/Tools
@@ -55,6 +55,9 @@ rm -rf %{buildroot}
 %{_mandir}/*/*
 
 %changelog
+* Sat May 02 2015 Kalev Lember <kalevlember@gmail.com> - 6.8-4
+- Rebuilt for GCC 5 C++11 ABI change
+
 * Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 6.8-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
