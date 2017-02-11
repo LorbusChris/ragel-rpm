@@ -2,7 +2,7 @@
 
 Name:           ragel   
 Version:        7.0.0.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Finite state machine compiler
 
 # aapl/ is the LGPLv2+
@@ -78,6 +78,9 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %{_includedir}/%{name}/
 
 %changelog
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.0.9-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Fri Oct 07 2016 Igor Gnatenko <i.gnatenko.brain@gmail.com> - 7.0.0.9-1
 - Fix FTBFS
 - Update to 7.0.0.9
