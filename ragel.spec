@@ -5,13 +5,16 @@ Summary:        Finite state machine compiler
 License:        GPLv2+
 URL:            https://www.colm.net/open-source/ragel/
 
-Source0:        https://www.colm.net/files/%{name}/%{name}-%{version}.tar.gz
+Source0:        https://www.colm.net/files/rage/ragel-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  make
+
+Provides:       ragel
+Conflicts:      ragel >= 7
 
 %description
 Ragel compiles finite state machines from regular languages into executable C,
@@ -21,7 +24,7 @@ arbitrary points in the recognition of a regular language. Code embedding is
 done using inline operators that do not disrupt the regular language syntax.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n ragel-%{version}
 
 %build
 %configure
