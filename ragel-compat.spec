@@ -34,10 +34,12 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %files
 %license COPYING
-%docdir %{_docdir}/ragel
-%doc README ChangeLog CREDITS
+%doc README
 %doc ragel.vim
 %doc doc/ragel-guide.pdf
+%docdir %{_docdir}/ragel
+%doc %{_docdir}/ragel/ChangeLog
+%doc %{_docdir}/ragel/CREDITS
 %{_bindir}/ragel
 %{_mandir}/*/*
 
