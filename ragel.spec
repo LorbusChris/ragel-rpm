@@ -5,7 +5,7 @@ Summary:        Finite state machine compiler
 License:        GPLv2+
 URL:            https://www.colm.net/open-source/ragel/
 
-Source0:        https://www.colm.net/files/rage/ragel-%{version}.tar.gz
+Source0:        https://www.colm.net/files/ragel/ragel-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
