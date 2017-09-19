@@ -1,17 +1,20 @@
-Name:           ragel   
-Version:        6.8
-Release:        6%{?dist}
+Name:           ragel-compat   
+Version:        6.10
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
-
-Group:          Development/Tools
 License:        GPLv2+
-URL:            http://www.complang.org/%{name}/
-Source0:        http://www.complang.org/%{name}/%{name}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+URL:            https://www.colm.net/open-source/ragel/
 
-# for documentation building
-BuildRequires:  gcc-objc, autoconf, gcc-c++
-Requires:       gawk
+Source0:        https://www.colm.net/files/ragel/ragel-%{version}.tar.gz
+
+BuildRequires:  gcc
+BuildRequires:  gcc-c++
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  make
+
+Provides:       ragel
+Conflicts:      ragel >= 7
 
 %description
 Ragel compiles finite state machines from regular languages into executable C,
@@ -21,40 +24,29 @@ arbitrary points in the recognition of a regular language. Code embedding is
 done using inline operators that do not disrupt the regular language syntax.
 
 %prep
-%setup -q
-
-# Pass fedora cflags correctly
-sed -i.flags \
-    -e '\@^CXXFLAGS=@d' \
-    configure{.in,}
-touch timestamp
-touch -r timestamp \
-    aclocal.m4 configure.in configure config.h.in \
-    Makefile.in */Makefile.in
+%setup -q -n ragel-%{version}
 
 %build
-# set the names of the other programming commandline programs
-%configure --docdir=%{_docdir}/%{name} RUBY=ruby JAVAC=javac GMCS=gmcs 
-
-make %{?_smp_mflags}
-
+%configure
 
 %install
-rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
-
-%clean
-rm -rf %{buildroot}
-
+%make_install
 
 %files
-%defattr(-,root,root,-)
-%doc COPYING ragel.vim CREDITS ChangeLog
+%license COPYING
+%doc README
+%doc ragel.vim
 %doc doc/ragel-guide.pdf
+%docdir %{_docdir}/ragel
+%doc %{_docdir}/ragel/ChangeLog
+%doc %{_docdir}/ragel/CREDITS
 %{_bindir}/ragel
 %{_mandir}/*/*
 
 %changelog
+* Tue Sep 19 2017 Christian Glombek <christian.glombek@rwth-aachen.de> - 6.10-1
+- Updated to version 6.10
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 6.8-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
