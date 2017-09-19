@@ -21,7 +21,7 @@ arbitrary points in the recognition of a regular language. Code embedding is
 done using inline operators that do not disrupt the regular language syntax.
 
 %prep
-%setup -q -%{name}-%{version}
+%setup -q -n %{name}-%{version}
 
 %build
 %configure
