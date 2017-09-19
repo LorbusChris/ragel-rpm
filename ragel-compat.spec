@@ -33,7 +33,10 @@ done using inline operators that do not disrupt the regular language syntax.
 %make_install
 
 %files
-%doc COPYING ragel.vim
+%license COPYING
+%doc ChangeLog
+%doc README
+%doc ragel.vim
 %doc doc/ragel-guide.pdf
 %{_bindir}/ragel
 %{_mandir}/*/*
