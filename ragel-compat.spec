@@ -34,8 +34,8 @@ done using inline operators that do not disrupt the regular language syntax.
 
 %files
 %license COPYING
-%doc ChangeLog
-%doc README
+%docdir %{_docdir}/ragel
+%doc README ChangeLog CREDITS
 %doc ragel.vim
 %doc doc/ragel-guide.pdf
 %{_bindir}/ragel
