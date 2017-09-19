@@ -42,7 +42,7 @@ done using inline operators that do not disrupt the regular language syntax.
 %{_mandir}/*/*
 
 %changelog
-* Tue Sep 19 2017 Christian Glombek <christian.glombek@rwth-aachen.de> - 0.13.0.5-1
+* Tue Sep 19 2017 Christian Glombek <christian.glombek@rwth-aachen.de> - 6.10-1
 - Updated to version 6.10
 
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 6.8-6
