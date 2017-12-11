@@ -1,13 +1,13 @@
 %bcond_with bootstrap
 
 Name:           ragel   
-Version:        7.0.0.9
-Release:        4%{?dist}
+Version:        7.0.0.10
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 # aapl/ is the LGPLv2+
-License:        GPLv2+ and LGPLv2+
-URL:            http://www.complang.org/%{name}/
+License:        MIT and LGPLv2+
+URL:            http://www.colm.net/open-source/%{name}/
 Source0:        https://www.colm.net/files/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
@@ -65,7 +65,6 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 #doc doc/ragel-guide.pdf
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
-%{_libdir}/lib%{name}.so.*
 %{_libdir}/libfsm.so.*
 %dir %{_datadir}/vim
 %dir %{_datadir}/vim/vimfiles
@@ -73,11 +72,14 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %{_datadir}/vim/vimfiles/syntax/%{name}.vim
 
 %files devel
-%{_libdir}/lib%{name}.so
 %{_libdir}/libfsm.so
 %{_includedir}/%{name}/
 
 %changelog
+* Mon Dec 11 2017 Jason Taylor <jtfas90@gmail.com> - 7.0.0.10-1
+- Upstream bugfix release
+- Updated spec to reflect MIT license
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.0.9-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
