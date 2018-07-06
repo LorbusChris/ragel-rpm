@@ -1,8 +1,8 @@
 %bcond_with bootstrap
 
-Name:           ragel   
-Version:        7.0.0.10
-Release:        2%{?dist}
+Name:           ragel
+Version:        7.0.0.11
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 # aapl/ is the LGPLv2+
@@ -43,8 +43,6 @@ Requires:       %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %autosetup
 # Do not pollute with docs
 sed -i -e "/dist_doc_DATA/d" Makefile.am
-# Put headers under subdir
-sed -i -e "s/include_HEADERS/pkginclude_HEADERS/g" src/Makefile.am aapl/Makefile.am
 
 %build
 autoreconf -vfi
@@ -62,10 +60,12 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %files
 %license COPYING
 %doc CREDITS ChangeLog
-#doc doc/ragel-guide.pdf
 %{_bindir}/%{name}
+%{_bindir}/%{name}-*
 %{_mandir}/man1/%{name}.1*
 %{_libdir}/libfsm.so.*
+%{_libdir}/libragel.so.*
+%{_datarootdir}/%{name}.lm
 %dir %{_datadir}/vim
 %dir %{_datadir}/vim/vimfiles
 %dir %{_datadir}/vim/vimfiles/syntax
@@ -73,9 +73,13 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 
 %files devel
 %{_libdir}/libfsm.so
+%{_libdir}/libragel.so
 %{_includedir}/%{name}/
 
 %changelog
+* Fri Jul 06 2018 Christian Glombek <lorbus@fedoraproject.org> - 7.0.0.11-1
+- Update to 7.0.0.11
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.0.10-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
@@ -142,7 +146,7 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 - remove patch, fix applied upstream
 
 * Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5-2
-- fix build process 
+- fix build process
 
 * Sun Aug 02 2009 Jeremy Hinegardner <jeremy at hinegardner dot org> - 6.5-1
 - Update to 6.5
