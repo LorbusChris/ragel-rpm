@@ -1,8 +1,8 @@
 %bcond_with bootstrap
 
 Name:           ragel
-Version:        7.0.0.11
-Release:        4%{?dist}
+Version:        7.0.0.12
+Release:        1%{?dist}
 Summary:        Finite state machine compiler
 
 # aapl/ is the LGPLv2+
@@ -76,6 +76,9 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %{_includedir}/%{name}/
 
 %changelog
+* Sun Jul 28 2019 Christian Glombek <lorbus@fedoraproject.org> - 7.0.0.12-1
+- Updated to version 7.0.0.12
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.0.11-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
